@@ -35,6 +35,7 @@ clean:
 
 	-rm ../bin/sort-freq
 	-rm ../bin/sort-word
+	-rm ../bin/sort-word-codec
 
 	-rm ../bin/sort-codec-seq
 	-rm ../bin/sort-codec-seq-wbfilter

@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+# 分序号,标准格式
+if [ -z "$1" ]; then
+	echo "Usage: $0 <dictionary_file>"
+	echo "dictionary_file format: 编码,序号=字词,频数\n"
+	echo "拆分后可以用breakupds-merge合并"
+	exit 1
+else
+
+	dict="$1"
+	seq=1
+
+	while grep -P "^[^,]*,${seq}=" "$dict" > "breakup${seq}.txt"; do
+		((seq++))
+	done
+
+	#尾处理
+	rm breakup${seq}.txt
+
+fi
+
+
+
